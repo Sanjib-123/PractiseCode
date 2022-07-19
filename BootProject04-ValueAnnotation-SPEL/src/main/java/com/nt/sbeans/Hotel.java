@@ -16,7 +16,7 @@ public class Hotel {
 	
 	@Value("${customer.name}")
 	private String custName;
-	@Value("#{menup.idlyPrice+menup.dosaPrice}")
+	@Value("#{menup.idlyPrice+menup.dosaPrice}") //SPEL for arithmetic operation
 	private Float billAmount;
 	
 	@Value("${os.name}")//os.name is fixed system properties
