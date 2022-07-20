@@ -1,0 +1,25 @@
+org:
+  nit:
+    company:
+      addrs: HYD
+      id: 1456
+      name: HCL
+      size: 100000
+    ename: rajesh
+    eno: 101
+    favColors:
+    - red
+    - green
+    - blue
+    idDetails:
+      aadharid: ASDF33435JJ9900
+      passportno: IN33435JJ9955
+      voterid: BFGF33435JJ99555
+    nickName:
+    - bunty
+    - chunty
+    - chotu
+    phoneNumbers:
+    - 7900309209
+    - 7900309200
+    - 7900309266
