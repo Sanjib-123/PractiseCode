@@ -21,7 +21,7 @@ public class SaveObjectTest {
 		Session ses = factory.openSession();
 		//prepare entity class object having data
 		Product p = new Product();
-		p.setPid(9011);p.setPname("table");
+		p.setPid(9013);p.setPname("candel");
 		p.setPrice(9000.55);p.setQty(10.0);
 		p.setStatus("available");
 		
@@ -46,7 +46,7 @@ public class SaveObjectTest {
 			//perform Tx Mgmt
 			if(flag) {
 				tx.commit(); //internally calls con.commit method
-				System.out.println("Object is saved(Record is inserted");
+				System.out.println("Object is saved(Record is inserted)");
 			}//if
 			else {
 				tx.rollback(); //Internally calls con.rollback method

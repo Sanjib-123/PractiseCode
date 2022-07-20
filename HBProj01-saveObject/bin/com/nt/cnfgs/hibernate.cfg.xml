@@ -12,6 +12,9 @@
     <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
     <property name="connection.username">root</property>
     <property name="connection.password">Sanjib@123</property>
+    <!-- Hibernate properties -->
+    <property name="hibernate.show_sql">true</property>
+    <property name="format_sql">true</property>
     <!-- mapping  / -->
     <mapping resource="com/nt/entity/product.hbm.xml"/>
     </session-factory>
