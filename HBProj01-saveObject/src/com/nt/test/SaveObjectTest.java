@@ -21,7 +21,7 @@ public class SaveObjectTest {
 		Session ses = factory.openSession();
 		//prepare entity class object having data
 		Product p = new Product();
-		p.setPid(9013);p.setPname("candel");
+		p.setPid(9014);p.setPname("candel");
 		p.setPrice(9000.55);p.setQty(10.0);
 		p.setStatus("available");
 		
@@ -31,7 +31,8 @@ public class SaveObjectTest {
 		try {
 			//begin tx
 			tx = ses.beginTransaction(); //internally calls con.setAutoCommit(false)
-			ses.save(p);
+			int idVal = (int)ses.save(p); 
+			//ses.save(p);
 			flag = true;
 		}//try
 		catch(HibernateException he) {
