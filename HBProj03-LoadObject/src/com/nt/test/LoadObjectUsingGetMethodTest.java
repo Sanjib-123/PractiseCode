@@ -29,21 +29,26 @@ public class LoadObjectUsingGetMethodTest {
 		//Transaction tx = null;
 		//boolean flag = true;
 		try {
+			//load object ses.get()
+			Product proxy = ses.load(Product.class, 9046);
+			System.out.println(proxy.getPname());
 			//load object(ses.get()
-			Product prod = ses.get(Product.class, 9046);
-			if(prod==null) {
-				System.out.println("Record not found");
-			}
-			else {
-				System.out.println("record found and it is"+prod.getPid()+" "+prod.getPname()+" "+prod.getPrice()+" "+prod.getQty()+" "+prod.getStatus());
-			}
+			//Product prod = ses.get(Product.class, 9046);
+//			if(prod==null) {
+//				System.out.println("Record not found");
+//			}
+//			else {
+//				System.out.println("record found and it is"+prod.getPid()+" "+prod.getPname()+" "+prod.getPrice()+" "+prod.getQty()+" "+prod.getStatus());
+//			}
 			//begin tx
 			//tx = ses.beginTransaction(); //internally calls con.setAutoCommit(false)
 			//int idVal = (int)ses.save(p); 
 			//ses.save(p);
 			//flag = true;
 		}//try
+		
 		catch(HibernateException he) {
+			System.out.println("object/record not found");
 			he.printStackTrace();
 			//flag = false;
 		}//catch
