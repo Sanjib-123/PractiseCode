@@ -10,41 +10,32 @@ public class HibernateUtil {
 	
 	static {
 		try {
-		//configure object
+		//Activate hibernate
 		Configuration cfg = new Configuration();
 		cfg.configure("/com/nt/cnfgs/hibernate.cfg.xml");
-		//build sessionFactory
-		factory = cfg.buildSessionFactory();
-		}
-	
-	catch(HibernateException he) {
-		he.printStackTrace();
-	}
-		catch(Exception e) {
-			e.printStackTrace();
+		//Build SessionFactory
+		 factory = cfg.buildSessionFactory();
+		}//try
+		catch(HibernateException he) {
+			he.printStackTrace();
 		}
 	}//static
 	
 	public static SessionFactory getSessionFactory() {
-		if(factory!=null)
-			
 		return factory;
-		else 
-			throw new IllegalArgumentException("-----------");
 	}
-	
 	public static Session getSession() {
 		Session ses = null;
 		if(factory!=null)
 			ses = factory.openSession();
-		
 		return ses;
 	}
 	public static void closeSession(Session ses) {
 		if(ses!=null)
 			ses.close();
+		
 	}
-	public static void closeSessionFactory() {
+	public static void loseSessionFactroy() {
 		if(factory!=null)
 			factory.close();
 	}
