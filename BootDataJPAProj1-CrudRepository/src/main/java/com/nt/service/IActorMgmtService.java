@@ -1,6 +1,7 @@
 package com.nt.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.nt.entity.Actor;
 
@@ -10,6 +11,8 @@ public interface IActorMgmtService {
 	public long fetchRecordsCount();
 	public Iterable<Actor> fetchAllActors();
 	public boolean isActorAvailable(int aid);
+	public Iterable<Actor> fetchActorsByIds(Iterable<Integer>ids);
+	public Optional<Actor> fetchActorById(int aid);
 	
 
 }

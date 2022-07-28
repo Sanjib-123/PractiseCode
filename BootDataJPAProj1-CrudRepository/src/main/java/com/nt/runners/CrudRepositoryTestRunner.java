@@ -1,7 +1,9 @@
 package com.nt.runners;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -49,6 +51,43 @@ public class CrudRepositoryTestRunner implements CommandLineRunner {
 		
 		System.out.println("--------");
 		list.stream().sorted(Comparator.comparing(actor->actor.getAid())).forEach(System.out::println); //sorting operation
+		
+		System.out.println("-----------findAllById(-)-----------");
+		service.fetchActorsByIds(List.of(9,10,11)).forEach(System.out::println);
+		
+		service.fetchActorsByIds(Arrays.asList(9,10,11)).forEach(actor->System.out.println(actor));
+		
+		System.out.println("-----------findById(-)-----------");
+		Optional<Actor>opt = service.fetchActorById(9);
+		if(opt.isPresent())
+			System.out.println("Actor info::"+opt.get());
+		else
+			System.out.println("Actor not found");
+		
+		System.out.println("-----------------------");
+		
+		Optional<Actor>opt1 = service.fetchActorById(9);
+		Actor actor =opt1.orElseThrow(()->new IllegalArgumentException("Actor not found"));
+		System.out.println("Actor info ::"+actor);
+		
+		System.out.println("-----------------------");
+		
+
+		Optional<Actor>opt2 = service.fetchActorById(9);
+		Actor actor1 =opt2.orElse(new Actor());
+		System.out.println("Actor info ::"+actor1);
+		
+		
+		System.out.println("-----------------------");
+		
+		Optional<Actor>opt3 = service.fetchActorById(9);
+		if(opt3.isEmpty()) 
+			System.out.println("Actor not found");
+		
+		else
+			System.out.println("Actor found"+opt3.get());
+		
+		
 
 	}
 		catch(Exception e) {

@@ -3,6 +3,7 @@ package com.nt.service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,18 @@ public class ActorMgmtServiceImpl implements IActorMgmtService {
 	public boolean isActorAvailable(int aid) {
 		
 		return actorRepo.existsById(aid);
+	}
+
+	@Override
+	public Iterable<Actor> fetchActorsByIds(Iterable<Integer> ids) {
+		
+		return actorRepo.findAllById(ids);
+	}
+
+	@Override
+	public Optional<Actor> fetchActorById(int aid) {
+		Optional<Actor> opt = actorRepo.findById(aid);
+		return opt;
 	}
 
 //	@Override
