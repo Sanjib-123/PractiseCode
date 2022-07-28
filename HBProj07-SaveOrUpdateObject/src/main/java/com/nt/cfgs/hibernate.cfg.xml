@@ -15,6 +15,7 @@
     <!-- Hibernate properties -->
     <property name="hibernate.show_sql">true</property>
     <property name="format_sql">true</property>
+   
     <!-- mapping  / -->
     <mapping resource="com/nt/entity/product.hbm.xml"/>
     </session-factory>
