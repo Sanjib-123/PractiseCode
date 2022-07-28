@@ -87,6 +87,9 @@ public class CrudRepositoryTestRunner implements CommandLineRunner {
 		else
 			System.out.println("Actor found"+opt3.get());
 		
+		System.out.println("-------findById(_)returning<T> directly----------------");
+		System.out.println("Actor info:"+service.showActorById(9));
+		
 		
 
 	}

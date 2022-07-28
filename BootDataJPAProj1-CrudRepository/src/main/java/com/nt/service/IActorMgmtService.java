@@ -13,6 +13,7 @@ public interface IActorMgmtService {
 	public boolean isActorAvailable(int aid);
 	public Iterable<Actor> fetchActorsByIds(Iterable<Integer>ids);
 	public Optional<Actor> fetchActorById(int aid);
+	public Actor showActorById(int aid);
 	
 
 }
