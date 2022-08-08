@@ -77,6 +77,30 @@ public class ActorMgmtServiceImpl implements IActorMgmtService {
 //			throw new IllegalArgumentException("aCTOR not found");
 	}
 
+	@Override
+	public String updateActorMobileNo(int aid, Long newMobileNo) {
+		Optional<Actor> opt = actorRepo.findById(aid);
+		if(opt.isPresent()) {
+			Actor actor = opt.get();
+			actor.setMobileNo(newMobileNo);
+			Actor uActor = actorRepo.save(actor);
+			return aid+"is updated with new MobileNo"+newMobileNo;
+		}
+		else
+		return aid+"Actor not found for updation";
+	}
+
+	@Override
+	public String removeActorById(int aid) {
+		Optional <Actor> opt = actorRepo.findById(aid);
+		if(opt.isEmpty()) {
+			actorRepo.deleteById(aid);
+			return aid+"Actor is deleted";
+		}
+		else
+		 return aid+"Actor is not found for deletion";
+	}
+
 //	@Override
 //	public String registerActorsGroup(List<Actor> list) {
 //		if(list!=null) {

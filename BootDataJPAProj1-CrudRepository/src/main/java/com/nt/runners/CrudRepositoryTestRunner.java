@@ -90,7 +90,11 @@ public class CrudRepositoryTestRunner implements CommandLineRunner {
 		System.out.println("-------findById(_)returning<T> directly----------------");
 		System.out.println("Actor info:"+service.showActorById(9));
 		
+		System.out.println("--------------Participateupdate object operation---------------");
+		System.out.println(service.updateActorMobileNo(9, 88888888L));
 		
+		System.out.println("----------deleteById(-) operation-----------");
+		System.out.println(service.removeActorById(9));
 
 	}
 		catch(Exception e) {

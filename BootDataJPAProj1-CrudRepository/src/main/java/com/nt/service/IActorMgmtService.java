@@ -14,6 +14,8 @@ public interface IActorMgmtService {
 	public Iterable<Actor> fetchActorsByIds(Iterable<Integer>ids);
 	public Optional<Actor> fetchActorById(int aid);
 	public Actor showActorById(int aid);
+	public String updateActorMobileNo(int aid,Long newMobileNo);
+	public String removeActorById(int aid);
 	
 
 }
