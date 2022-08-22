@@ -7,8 +7,8 @@
 <hibernate-mapping>
  <class name="com.nt.entity.Product" table="PRODUCT">
   <id name="pid" column="pid"> <!-- Singular ID field cfg -->
-  <generator class="increment"/>
-   <!--  <generator class="inrement"/> -->
+ <!--  <generator class="increment"/> -->
+     <generator class="inrement"/>
     </id>
   <property name="pname" column="PNAME"/>
   <property name="price" column="PRICE"/>
